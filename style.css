@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(208,249,255);
+    background: linear-gradient(90deg, rgba(208,249,255,1) 0%, rgba(217,236,240,1) 35%, rgba(237,237,237,1) 100%);
+    font-family: sans-serif;
+}
+
+
+body.active .container,
+body.active h1 {
+    display: none;
+}
+body.active .overlay {
+    opacity: 1;
+}
+body.active .popup {
+    display: flex;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.heading {
+    margin-bottom: 50px;
+    font-size: 45px;
+}
+
+.container {
+    width: 700px;
+    height: 310px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px 5px rgba(0,0,0,0.5);
+}
+
+.options {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 60px;
+    color: #fff;
+    font-weight: 600;
+    transition: scale 0.3s ease-in-out;
+    cursor: pointer;
+}
+.btn:hover {
+    scale: 1.1;
+}
+
+.btn#Rock {
+    background: linear-gradient(90deg, #6eee87, #5fc52e);
+}
+
+.btn#Paper {
+    background: linear-gradient(90deg ,#ff0f7b, #f89b29);
+}
+
+.btn#Scissors {
+    background: linear-gradient(90deg, #c471f2, #f76cc6);
+}
+
+.counter {
+    margin-top: 25px;
+    display: flex;
+    gap: 40px;
+}
+
+.counter h2 {
+    font-size: 30px;
+}
+
+.result {
+    margin-top: 25px;
+    font-size: 30px;
+}
+
+.result.active {
+    opacity: 0;
+    filter: blur(4px);
+    animation: fade-in 0.8s 0.5s cubic-bezier(0.11, 0, 0.5, 0);
+    animation-fill-mode: both;
+}
+
+@keyframes fade-in {
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+.popup {
+    position: absolute;
+    width: 350px;
+    height: 250px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 24px;
+    display: none;
+}
+
+.popup button {
+    margin-top: 25px;
+    font-size: 22px;
+    font-weight: 400;
+    padding: 14px 22px;
+    border: none;
+    cursor: pointer;
+    background-color: #386af5;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+}
+.popup button:hover {
+    background-color: #4d7bf8;
+}
